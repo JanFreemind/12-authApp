@@ -36,7 +36,7 @@ export class RegisterComponent  {
         }
         else {
           // TODO mostrar mensaje de error
-          Swal.fire('Error', ok, 'error' )
+          Swal.fire( 'Error', ok, 'error' )
         }
       });
      
