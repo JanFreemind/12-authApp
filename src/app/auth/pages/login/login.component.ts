@@ -13,9 +13,9 @@ import { AuthService } from '../../services/auth.service';
   ]
 })
 export class LoginComponent {
-  
+
   miFormulario: FormGroup = this.fb.group({
-    
+
     email: ['test1@test.com', [ Validators.required, Validators.email ]],
     password: ['123456', [ Validators.required, Validators.minLength(6) ]],
   });
@@ -25,13 +25,14 @@ export class LoginComponent {
                private authService: AuthService ) { }
 
   login() {
+
     console.log( this.miFormulario.value );
 
     const { email, password } = this.miFormulario.value;
-    
+
     this.authService.login( email, password )
       .subscribe( ok => {
-      
+
         if( ok === true ) {
           this.router.navigateByUrl('/dashboard');
         }
